@@ -205,9 +205,11 @@ export async function bundleInstall(gemfile, lockFile, platform, engine, rubyVer
     console.log(`Found cache for key: ${cachedKey}`)
   }
 
+  console.log("CAMILO")
   console.log(
     fs.readdirSync(bundleCachePath)
     )
+  await exec.exec('ls', [bundleCachePath])
               
   // Always run 'bundle install' to list the gems
   await exec.exec('bundle', ['install', '--jobs', '4'])
